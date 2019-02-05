@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Variedade;
 
 class SiteController extends Controller
 {
@@ -15,6 +16,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $variedades = Variedade::get();
+        return view('index', compact('variedades'));
     }
 }

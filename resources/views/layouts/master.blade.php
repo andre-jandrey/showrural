@@ -15,48 +15,50 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}">
     <!-- meanmenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
+    <link rel="stylesheet" href="{{ asset('css/meanmenu/meanmenu.min.css') }}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
     <!-- jvectormap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="{{ asset('css/jvectormap/jquery-jvectormap-2.0.3.css') }}">
     <!-- notika icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <link rel="stylesheet" href="{{ asset('css/notika-custom-icon.css') }}">
     <!-- wave CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/wave/waves.min.css">
+    <link rel="stylesheet" href="{{ asset('css/wave/waves.min.css') }}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/datapicker/datepicker3.css') }}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
 
 <body>
@@ -204,11 +206,11 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                        <li class="active"><a href="{{ url('/') }}"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
                         <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Cooperados</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Demanda</a>
+                        <li><a data-toggle="tab" href="#demanda"><i class="notika-icon notika-edit"></i> Demanda</a>
                         </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Variedade</a>
                         </li>
@@ -216,12 +218,12 @@
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
-                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                       
+                        <div id="demanda" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.html">Dashboard One</a>
+                                <li><a href="{{ url('demanda/create') }}">Nova Demanda</a>
                                 </li>
-                                <li><a href="index-2.html">Dashboard Two</a>
-                                </li>
+                               
                             </ul>
                         </div>
               
@@ -230,6 +232,11 @@
             </div>
         </div>
     </div>
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <!-- Main Menu area End-->
     @yield('content')
     <!-- Start Footer area-->
@@ -239,7 +246,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
                         <p>Copyright © 2018 
-. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -248,69 +255,73 @@
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="js/wow.min.js"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
+    <script src="{{ asset('js/jquery-price-slider.js') }}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="js/meanmenu/jquery.meanmenu.js"></script>
+    <script src="{{ asset('js/meanmenu/jquery.meanmenu.js') }}"></script>
     <!-- counterup JS
 		============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
+    <script src="{{ asset('js/counterup/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/counterup/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/counterup/counterup-active.js') }}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset('js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <!-- jvectormap JS
 		============================================ -->
-    <script src="js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="js/jvectormap/jvectormap-active.js"></script>
+    <script src="{{ asset('js/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+    <script src="{{ asset('js/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <script src="{{ asset('js/jvectormap/jvectormap-active.js') }}"></script>
     <!-- sparkline JS
 		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
+    <script src="{{ asset('js/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('js/sparkline/sparkline-active.js') }}"></script>
     <!-- sparkline JS
 		============================================ -->
-    <script src="js/flot/jquery.flot.js"></script>
-    <script src="js/flot/jquery.flot.resize.js"></script>
-    <script src="js/flot/curvedLines.js"></script>
-    <script src="js/flot/flot-active.js"></script>
+    <script src="{{ asset('js/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('js/flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('js/flot/curvedLines.js') }}"></script>
+    <script src="{{ asset('js/flot/flot-active.js') }}"></script>
     <!-- knob JS
 		============================================ -->
-    <script src="js/knob/jquery.knob.js"></script>
-    <script src="js/knob/jquery.appear.js"></script>
-    <script src="js/knob/knob-active.js"></script>
+    <script src="{{ asset('js/knob/jquery.knob.js') }}"></script>
+    <script src="{{ asset('js/knob/jquery.appear.js') }}"></script>
+    <script src="{{ asset('js/knob/knob-active.js') }}"></script>
     <!--  wave JS
 		============================================ -->
-    <script src="js/wave/waves.min.js"></script>
-    <script src="js/wave/wave-active.js"></script>
+    <script src="{{ asset('js/wave/waves.min.js') }}"></script>
+    <script src="{{ asset('js/wave/wave-active.js') }}"></script>
     <!--  todo JS
 		============================================ -->
-    <script src="js/todo/jquery.todo.js"></script>
+    <script src="{{ asset('js/todo/jquery.todo.js') }}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="js/plugins.js"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
 	<!--  Chat JS
 		============================================ -->
+
+            <!-- datapicker JS
+		============================================ -->
+    
  
     <!-- main JS
 		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 	<!-- tawk chat JS
 		============================================ -->
 

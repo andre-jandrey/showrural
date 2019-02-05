@@ -252,48 +252,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                     <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                     <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
-                                     <tr>
-                                        <td class="f-500 c-cyan">4555</td>
-                                        <td>Alface Americana</td>
-                                        <td class="f-500 c-cyan">45</td>
-                                        <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
-                                    </tr>
+                                    @foreach ($variedades as $variedade)
+                                        <tr>
+                                            <td class="f-500 c-cyan">{{ $variedade->id }}</td>
+                                            <td>{{ $variedade->nome }}</td>
+                                            <td class="f-500 c-cyan">{{ $variedade->ciclo }}</td>
+                                            <td class="f-500 c-cyan"><a href="#mailbox"><i class="notika-icon notika-trash"></i></td>
+                                        </tr>
+                                    @endforeach
+                                  
+                                    
                                 </tbody>
                             </table>
                         </div>
