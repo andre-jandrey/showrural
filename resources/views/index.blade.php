@@ -268,17 +268,20 @@
                         <div id="todo-form">
                             <div class="row">
                                 <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 todo-inputbar">
-                                    <div class="form-group todo-flex">
-                                        <div class="nk-int-st">
-                                            <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Nome">
+                                    <form method='POST' action="{{ url('/variedade') }}">
+                                    {{ csrf_field() }}
+                                        <div class="form-group todo-flex">
+                                            <div class="nk-int-st">
+                                                <input type="text" id="todo-input-text" name="nome" class="form-control" placeholder="Nome">
+                                            </div>
+                                            <div class="nk-int-st">
+                                                <input type="number" id="todo-input-text" name="ciclo" class="form-control" placeholder="Ciclo (dias)">
+                                            </div>
+                                            <div class="todo-send">
+                                            <button type="submit" class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Nova</button>
+                                            </div>
                                         </div>
-                                        <div class="nk-int-st">
-                                            <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Ciclo (dias)">
-                                        </div>
-                                        <div class="todo-send">
-                                        <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Nova</button>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

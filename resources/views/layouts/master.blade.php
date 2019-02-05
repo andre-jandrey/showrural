@@ -164,17 +164,11 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
-                                    <ul class="collapse dropdown-header-top">
-                                        <li><a href="index.html">Dashboard One</a></li>
-                                        <li><a href="index-2.html">Dashboard Two</a></li>
-                                     
-                                    </ul>
+                                <li><a href="{{ url('/') }}">Home</a>
+                                    
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Cooperados</a>
-                                    <ul id="demoevent" class="collapse dropdown-header-top">
-                                      
-                                    </ul>
+                                <li><a href="{{ url('/cooperado') }}">Cooperados</a>
+                                    
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#democrou" href="#">Demanda</a>
                                     <ul id="democrou" class="collapse dropdown-header-top">
@@ -208,7 +202,7 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a href="{{ url('/') }}"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Cooperados</a>
+                        <li><a href="{{ url('/cooperado') }}"><i class="notika-icon notika-mail"></i> Cooperados</a>
                         </li>
                         <li><a data-toggle="tab" href="#demanda"><i class="notika-icon notika-edit"></i> Demanda</a>
                         </li>

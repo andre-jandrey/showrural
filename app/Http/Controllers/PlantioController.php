@@ -46,7 +46,7 @@ class PlantioController extends Controller
 
     public function index()
     {
-        $plantios = Plantio::all();
+        $plantios = Plantio::with('variedade')->get();
 
         return response()->json([
             'status' => 'success',

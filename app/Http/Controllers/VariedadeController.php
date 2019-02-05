@@ -24,27 +24,21 @@ class VariedadeController extends Controller
             'message' => $variedades,
         ], 200);  
     }
-/*
+
     public function store(Request $request)
     {
         $data = $request->all();
 
         $v = $this->validator($data);
         if ($v->fails()){
-            return response()->json([
-                'status' => 'error',
-                'message' => $v->errors(),
-            ], 404);
+            return back()->withErrors($v->messages());
         }
 
-        $endereco = Endereco::create($data);
+        $variedade = Variedade::create($data);
             
-        return response()->json([
-            'status' => 'success',
-            'message' => $endereco,
-        ], 200);
+        return redirect('/')->with('message', 'Variedade cadastrada com sucesso!');
     }
-
+/*
     public function show($id)
     {
         if (!$endereco = Endereco::find($id)) {
