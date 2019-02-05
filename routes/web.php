@@ -21,3 +21,4 @@ Route::resource('demanda', 'DemandaController');
 Route::resource('manejo', 'ManejoController');
 Route::resource('variedade', 'VariedadeController');
 Route::resource('cooperado', 'CooperadoController');
+Route::resource('plantio', 'PlantioController');

@@ -44,14 +44,18 @@ class PlantioController extends Controller
         return [];
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $plantios = Plantio::with('variedade')->get();
+        $plantios = Plantio::with('variedade', 'endereco', 'endereco.user')->get();
 
-        return response()->json([
-            'status' => 'success',
-            'message' => $plantios,
-        ], 200);  
+        if( $request->is('api/*')){
+            return response()->json([
+                'status' => 'success',
+                'message' => $plantios,
+            ], 200);  
+        }else{
+            return view('plantio.index', compact('plantios'));
+        }
     }
 
     public function store(Request $request)

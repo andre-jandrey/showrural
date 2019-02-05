@@ -222,7 +222,7 @@
                         </div>
                          <div id="relatorios" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="{{ url('relatorios/plantio') }}">Plantio</a>
+                                <li><a href="{{ url('/plantio') }}">Plantio</a>
                                 </li>
                                
                             </ul>
