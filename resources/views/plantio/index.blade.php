@@ -60,7 +60,7 @@
                                         <td>{{ $plantio->quantidade }}</td>
                                         <td>{{ date('d/m/Y', strtotime($plantio->inicio)) }}</td>
                                         <td>{{ date('d/m/Y', strtotime($plantio->fim)) }}</td>
-                                        <td>{{ $plantio->user->name }}</td>
+                                        <td>{{ $plantio->endereco->user->name }}</td>
                                         <td>{{ $plantio->endereco->nome }}</td>                                        
                                     </tr>
                                 @endforeach
