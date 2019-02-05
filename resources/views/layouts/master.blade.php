@@ -208,7 +208,7 @@
                         </li>
                         <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Variedade</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Relatórios</a>
+                        <li><a data-toggle="tab" href="#relatorios"><i class="notika-icon notika-windows"></i> Relatórios</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -216,6 +216,13 @@
                         <div id="demanda" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="{{ url('demanda/create') }}">Nova Demanda</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                         <div id="relatorios" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="{{ url('relatorios/plantio') }}">Plantio</a>
                                 </li>
                                
                             </ul>

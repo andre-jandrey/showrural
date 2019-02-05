@@ -18,7 +18,7 @@ class DemandaController extends Controller
             'quantidade' => ['required', 'integer'],
             'valor' => ['required'],
             'variedade_id' => ['required'],
-            'user_id' => ['required'],
+            
         ]); 
     }
 
@@ -51,10 +51,39 @@ class DemandaController extends Controller
         if ($v->fails()){
             return back()->withErrors($v->messages());
         }
-        
+        $data['user_id'] = 1;
         $demanda = Demanda::create($data);
-            
-        return redirect('/')->with('message', 'Demanda cadastrada com sucesso!');
+        $demanda = Demanda::with('user', 'variedade')->find($demanda->id);
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://api.wassenger.com/v1/messages",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "{\"phone\":\"+5544999631273\",\"message\":\"CooperVenda informa: Coperativa ".$demanda->user->name." solicita demanda de ".$demanda->variedade->nome.". Acesse o aplicativo e fique por dentro! #coopervenda\"}",
+        CURLOPT_HTTPHEADER => array(
+            "content-type: application/json",
+            "token: dd432d1f947a1bbe1d601d71e7594fa4e35aa3bb0bc65d608d2c0cc95ce1977973e79b802f206f80"
+        ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+        echo "cURL Error #:" . $err;
+        } else {
+        echo $response;
+        }
+                  
+        //return redirect('/')->with('message', 'Demanda cadastrada com sucesso!');
     }
 
     public function show($id)

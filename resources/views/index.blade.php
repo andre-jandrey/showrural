@@ -9,8 +9,8 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                     <div class="website-traffic-ctn">
-                        <h2><span class="counter">50,000</span></h2>
-                        <p>Total Website Traffics</p>
+                        <h2><span class="counter">5,472</span></h2>
+                        <p>Transações Totais</p>
                     </div>
                     <div class="sparkline-bar-stats1">9,4,8,6,5,6,4,8,3,5,9,5</div>
                 </div>
@@ -18,8 +18,8 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                     <div class="website-traffic-ctn">
-                        <h2><span class="counter">90,000</span>k</h2>
-                        <p>Website Impressions</p>
+                        <h2><span class="counter">16,000</span>k</h2>
+                        <p>Produtores ativos</p>
                     </div>
                     <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
                 </div>
@@ -27,8 +27,8 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                     <div class="website-traffic-ctn">
-                        <h2>$<span class="counter">40,000</span></h2>
-                        <p>Total Online Sales</p>
+                        <h2>R$<span class="counter">400,000</span></h2>
+                        <p>Movimentado em vendas</p>
                     </div>
                     <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
                 </div>
@@ -36,8 +36,8 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                     <div class="website-traffic-ctn">
-                        <h2><span class="counter">1,000</span></h2>
-                        <p>Total Support Tickets</p>
+                        <h2><span class="counter">390</span></h2>
+                        <p>Visitas ao cooperado</p>
                     </div>
                     <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
                 </div>
@@ -54,8 +54,8 @@
                 <div class="sale-statistic-inner notika-shadow mg-tb-30">
                     <div class="curved-inner-pro">
                         <div class="curved-ctn">
-                            <h2>Sales Statistics</h2>
-                            <p>Vestibulum purus quam scelerisque, mollis nonummy metus</p>
+                            <h2>Estatísticas de Venda</h2>
+                            <p>Acompanhe seus números</p>
                         </div>
                     </div>
                     <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
@@ -64,32 +64,23 @@
             <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
                 <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                     <div class="past-day-statis">
-                        <h2>For The Past 30 Days</h2>
-                        <p>Fusce eget dolor id justo luctus the commodo vel pharetra nisi. Donec velit of libero.</p>
+                        <h2>Nos últimos 30 dias</h2>
+                        
                     </div>
                     <div class="dash-widget-visits"></div>
                     <div class="past-statistic-an">
                         <div class="past-statistic-ctn">
                             <h3><span class="counter">3,20,000</span></h3>
-                            <p>Page Views</p>
+                            <p>Visualizações</p>
                         </div>
                         <div class="past-statistic-graph">
                             <div class="stats-bar"></div>
                         </div>
-                    </div>
-                    <div class="past-statistic-an">
-                        <div class="past-statistic-ctn">
-                            <h3><span class="counter">1,03,000</span></h3>
-                            <p>Total Clicks</p>
-                        </div>
-                        <div class="past-statistic-graph">
-                            <div class="stats-line"></div>
-                        </div>
-                    </div>
+                    </div>                  
                     <div class="past-statistic-an">
                         <div class="past-statistic-ctn">
                             <h3><span class="counter">24,00,000</span></h3>
-                            <p>Site Visitors</p>
+                            <p>Visitantes</p>
                         </div>
                         <div class="past-statistic-graph">
                             <div class="stats-bar-2"></div>
@@ -152,7 +143,7 @@
                 <div class="recent-post-wrapper notika-shadow sm-res-mg-t-30 tb-res-ds-n dk-res-ds">
                     <div class="recent-post-ctn">
                         <div class="recent-post-title">
-                            <h2>Recent Posts</h2>
+                            <h2>Últimos Plantios</h2>
                         </div>
                     </div>
                     <div class="recent-post-items">
@@ -163,8 +154,8 @@
                                         <img src="img/post/2.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
-                                        <h2>Smith</h2>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        <h2>Alface Roxa</h2>
+                                        <p>Ínicio: 05/02/2019</p>
                                     </div>
                                 </div>
                             </a>
@@ -176,8 +167,8 @@
                                         <img src="img/post/1.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
-                                        <h2>John Deo</h2>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        <h2>Cenoura</h2>
+                                        <p>Ínicio: 13/01/2019</p>
                                     </div>
                                 </div>
                             </a>
@@ -189,8 +180,8 @@
                                         <img src="img/post/4.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
-                                        <h2>Malika</h2>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        <h2>Beterraba</h2>
+                                        <p>Ínicio: 01/02/2019</p>
                                     </div>
                                 </div>
                             </a>
@@ -202,8 +193,8 @@
                                         <img src="img/post/2.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
-                                        <h2>Smith</h2>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        <h2>Cebola</h2>
+                                        <p>Ínicio: 23/01/2019</p>
                                     </div>
                                 </div>
                             </a>
@@ -215,8 +206,8 @@
                                         <img src="img/post/1.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
-                                        <h2>John Deo</h2>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
+                                        <h2>Alface Crespa</h2>
+                                        <p>Ínicio: 05/02/2019</p>
                                     </div>
                                 </div>
                             </a>
@@ -225,7 +216,7 @@
                             <a href="#">
                                 <div class="recent-post-flex rc-ps-vw">
                                     <div class="recent-post-line rct-pt-mg">
-                                        <p>View All</p>
+                                        <p>Ver todos</p>
                                     </div>
                                 </div>
                             </a>
@@ -294,117 +285,6 @@
     </div>
 </div>
 <!-- End Email Statistic area-->
-<!-- Start Realtime sts area-->
-<div class="realtime-statistic-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <div class="realtime-wrap notika-shadow mg-t-30">
-                    <div class="realtime-ctn">
-                        <div class="realtime-title">
-                            <h2>Realtime Visitors</h2>
-                        </div>
-                    </div>
-                    <div class="realtime-visitor-ctn">
-                        <div class="realtime-vst-sg">
-                            <h4><span class="counter">4,35,456</span></h4>
-                            <p>Visitors last 24h</p>
-                        </div>
-                        <div class="realtime-vst-sg">
-                            <h4><span class="counter">4,566</span></h4>
-                            <p>Visitors last 30m</p>
-                        </div>
-                    </div>
-                    <div class="realtime-map">
-                        <div class="vectorjsmarp" id="world-map"></div>
-                    </div>
-                    <div class="realtime-country-ctn realtime-ltd-mg">
-                        <h5>September 4, 21:44:02 (2 Mins 56 Seconds)</h5>
-                        <div class="realtime-ctn-bw">
-                            <div class="realtime-ctn-st">
-                                <span><img src="img/country/1.png" alt="" /></span> <span>United States</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Firefox</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Mac OSX</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="realtime-country-ctn">
-                        <h5>September 7, 20:44:02 (5 Mins 56 Seconds)</h5>
-                        <div class="realtime-ctn-bw">
-                            <div class="realtime-ctn-st">
-                                <span><img src="img/country/2.png" alt="" /></span> <span>Australia</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Firefox</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Mac OSX</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="realtime-country-ctn">
-                        <h5>September 9, 19:44:02 (10 Mins 56 Seconds)</h5>
-                        <div class="realtime-ctn-bw">
-                            <div class="realtime-ctn-st">
-                                <span><img src="img/country/3.png" alt="" /></span> <span>Brazil</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Firefox</span>
-                            </div>
-                            <div class="realtime-bw">
-                                <span>Mac OSX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <div class="add-todo-list notika-shadow mg-t-30">
-                    <div class="realtime-ctn">
-                        <div class="realtime-title">
-                            <h2>Add Todo</h2>
-                        </div>
-                    </div>
-                    <div class="card-box">
-                        <div class="todoapp">
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
-                                    <h4 id="todo-message"><span id="todo-remaining"></span> of <span id="todo-total"></span> remaining</h4>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="notika-todo-btn">
-                                        <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notika-todo-scrollbar">
-                                <ul class="list-group no-margn todo-list" id="todo-list"></ul>
-                            </div>
-                            <div id="todo-form">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 todo-inputbar">
-                                        <div class="form-group todo-flex">
-                                            <div class="nk-int-st">
-                                                <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
-                                            </div>
-                                            <div class="todo-send">
-                                                <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Add</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
+<
 <!-- End Realtime sts area-->
 @endsection
