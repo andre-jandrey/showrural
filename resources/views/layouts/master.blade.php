@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="{{ asset('css/datapicker/datepicker3.css') }}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <script src="{{ asset('js/pacotes/modernizr-2.8.3.min.js') }}"></script>
 </head>
 
 <body>
@@ -256,7 +256,7 @@
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
-    <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('js/pacotes/jquery-1.12.4.min.js') }}"></script>
     <!-- bootstrap JS
 		============================================ -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
