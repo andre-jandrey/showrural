@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Validator;
 
 class PlantioController extends Controller
 {
+    protected $manejoRules = [
+        'plantio_id' => 'required|integer',
+        'manejo_id' => 'required|integer',
+        'data' => 'required|date',
+    ];
+
     protected function validator($method, array $data)
     {
         if($method == 'POST'){
@@ -152,5 +158,30 @@ class PlantioController extends Controller
             'status' => 'success',
             'message' => $plantio,
         ], 200);
+    }
+
+
+    public function manejo(Request $request)
+    {
+        $validation = Validator::make($request->all(), $this->manejoRules);
+        
+        if ($validation->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validation->errors(),
+            ], 404);
+        }
+
+        $data = $request->all();
+        if (!$plantio = Plantio::find($data['plantio_id'])) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Plantio não encontrado',
+            ], 404);
+        }
+
+        
+
+        $plantio->manejos()->attach(['plantio_id' => $data['plantio_id']], ['manejo_id' => $data['manejo_id']], ['data' => $data['data']]);
     }
 }
