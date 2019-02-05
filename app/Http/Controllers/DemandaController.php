@@ -24,7 +24,7 @@ class DemandaController extends Controller
 
     public function index()
     {
-        $demandas = Demanda::get();
+        $demandas = Demanda::with('variedade')->get();
 
         foreach($demandas as $demanda){
             $vendas = Venda::where('demanda_id', $demanda->id)->sum('quantidade');
