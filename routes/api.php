@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::group(['middleware' => ['sessions']], function () {
+  //  Route::apiResource('endereco', 'EnderecoController');
+    Route::apiResource('manejo', 'ManejoController');    
+//});

@@ -13,7 +13,7 @@ class CreateTableVariedade extends Migration
      */
     public function up()
     {
-        Schema::create('table_variedade', function (Blueprint $table) {
+        Schema::create('variedade', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
             $table->integer('ciclo');

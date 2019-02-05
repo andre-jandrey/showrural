@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableEndereco extends Migration
+class CreatePlantiosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,8 @@ class CreateTableEndereco extends Migration
      */
     public function up()
     {
-        Schema::create('endereco', function (Blueprint $table) {
+        Schema::create('plantios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-
-            $table->unsignedInteger('user_id')->nullable();
-            $table
-                ->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ class CreateTableEndereco extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_endereco');
+        Schema::dropIfExists('plantios');
     }
 }

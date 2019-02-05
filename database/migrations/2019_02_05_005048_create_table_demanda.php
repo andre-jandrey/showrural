@@ -13,7 +13,7 @@ class CreateTableDemanda extends Migration
      */
     public function up()
     {
-        Schema::create('table_demanda', function (Blueprint $table) {
+        Schema::create('demanda', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
             $table->integer('quantidade');
@@ -24,6 +24,12 @@ class CreateTableDemanda extends Migration
                 ->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+            $table->unsignedInteger('variedade_id')->nullable();
+            $table
+                ->foreign('variedade_id')
+                ->references('id')
+                ->on('variedade')
                 ->onDelete('cascade');
             $table->timestamps();
         });

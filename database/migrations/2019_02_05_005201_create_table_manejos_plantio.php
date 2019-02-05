@@ -13,7 +13,7 @@ class CreateTableManejosPlantio extends Migration
      */
     public function up()
     {
-        Schema::create('table_manejos_plantio', function (Blueprint $table) {
+        Schema::create('manejos_plantio', function (Blueprint $table) {
             $table->increments('id');
 
             $table->unsignedInteger('plantio_id')->nullable();
@@ -40,6 +40,6 @@ class CreateTableManejosPlantio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_manejos_plantio');
+        Schema::dropIfExists('manejos_plantio');
     }
 }

@@ -13,12 +13,12 @@ class CreateTablePlantio extends Migration
      */
     public function up()
     {
-        Schema::create('table_plantio', function (Blueprint $table) {
+        Schema::create('plantio', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quantidade');
             $table->date('inicio');
             $table->date('fim');
-            $table->tinyInt('tipo');
+            $table->tinyInteger('tipo');
             $table->unsignedInteger('variedade_id')->nullable();
             $table
                 ->foreign('variedade_id')
