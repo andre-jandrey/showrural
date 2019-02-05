@@ -59,7 +59,6 @@ class ManejoController extends Controller
             'message' => $manejo,
         ], 200);  
     }
-
    
     public function update(Request $request, $id)
     {

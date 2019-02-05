@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plantio extends Model
 {
+    protected $table = "plantio";
+
     protected $fillable = array('quantidade','inicio','fim','tipo', 'variedade_id','endereco_id');
 
     public function variedade()

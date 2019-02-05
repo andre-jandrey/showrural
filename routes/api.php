@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Route::group(['middleware' => ['sessions']], function () {
-  //  Route::apiResource('endereco', 'EnderecoController');
     Route::apiResource('manejo', 'ManejoController');    
+    Route::apiResource('endereco', 'EnderecoController');
+    Route::apiResource('plantio', 'PlantioController');
 //});

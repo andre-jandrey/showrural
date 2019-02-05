@@ -3,83 +3,152 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plantio;
+use App\Models\Variedade;
+use App\Models\Endereco;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PlantioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected function validator($method, array $data)
+    {
+        if($method == 'POST'){
+            return Validator::make($data, [
+                'variedade_id' => ['required', 'integer'],
+                'endereco_id' => ['required', 'integer'],
+                'quantidade' => ['required', 'integer'],
+                'inicio' => ['required', 'string', 'max:255'],
+                'fim' => ['required', 'date'],
+                'tipo' => ['required', 'integer'],
+            ]); 
+        }
+        if($method == 'PUT'){
+            return Validator::make($data, [
+                'variedade_id' => ['integer'],
+                'endereco_id' => ['integer'],
+                'quantidade' => ['integer'],
+                'inicio' => ['string', 'max:255'],
+                'fim' => ['date'],
+                'tipo' => ['integer'],
+            ]); 
+        }
+        return [];
+    }
+
     public function index()
     {
-        //
+        $plantios = Plantio::all();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => $plantios,
+        ], 200);  
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $v = $this->validator('POST', $data);
+        if ($v->fails()){
+            return response()->json([
+                'status' => 'error',
+                'message' => $v->errors(),
+            ], 404);
+        }
+
+        if (!$variedade = Variedade::find($data['variedade_id'])) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Variedade não encontrada',
+            ], 404);
+        }
+
+        if (!$endereco = Endereco::find($data['endereco_id'])) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Endereço não encontrad0',
+            ], 404);
+        }
+
+        $plantio = Plantio::create($data);
+            
+        return response()->json([
+            'status' => 'success',
+            'message' => $plantio,
+        ], 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Plantio  $plantio
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Plantio $plantio)
+    public function show($id)
     {
-        //
+        if (!$plantio = Plantio::find($id)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Plantio não encontrado',
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => $plantio,
+        ], 200);  
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Plantio  $plantio
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Plantio $plantio)
+    public function update(Request $request, $id)
     {
-        //
+        if (!$plantio = Plantio::find($id)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Plantio não encontrado',
+            ], 404);
+        }
+
+        $data = $request->all();
+
+        $v = $this->validator('PUT', $data);
+        if ($v->fails()){
+            return response()->json([
+                'status' => 'error',
+                'message' => $v->errors(),
+            ], 404);
+        }
+
+        if (!$variedade = Variedade::find($data['variedade_id'])) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Variedade não encontrada',
+            ], 404);
+        }
+
+        if (!$endereco = Endereco::find($data['endereco_id'])) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Endereço não encontrad0',
+            ], 404);
+        }
+
+        $plantio->update($data);
+            
+        return response()->json([
+            'status' => 'success',
+            'message' => $plantio,
+        ], 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Plantio  $plantio
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Plantio $plantio)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Plantio  $plantio
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Plantio $plantio)
-    {
-        //
+        if (!$plantio = Plantio::find($id)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Plantio não encontrado',
+            ], 404);
+        }
+      
+        $plantio->delete();
+            
+        return response()->json([
+            'status' => 'success',
+            'message' => $plantio,
+        ], 200);
     }
 }
