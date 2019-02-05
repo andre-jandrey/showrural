@@ -9,7 +9,7 @@ class ExtratoController extends Controller
 {
     public function saldo()
     {
-        $saldo = Extrato::where('user_id', '1')->sum('valor');
+        $saldo = Extrato::where('user_id', '2')->sum('valor');
 
         return response()->json([
             'status' => 'success',
