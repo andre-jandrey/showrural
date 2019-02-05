@@ -24,5 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::apiResource('venda', 'VendaController');
     Route::apiResource('demanda', 'DemandaController');
     Route::apiResource('variedade', 'VariedadeController');
+    Route::apiResource('extrato', 'ExtratoController');
     Route::post('plantio/manejo', 'PlantioController@manejo')->name('plantio.manejo');
 //});

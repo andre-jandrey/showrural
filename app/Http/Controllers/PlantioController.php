@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plantio;
 use App\Models\Variedade;
 use App\Models\Endereco;
+use App\Models\ManejoPlantio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -180,8 +181,14 @@ class PlantioController extends Controller
             ], 404);
         }
 
+        $manejo = ManejoPlantio::create($data);
         
+        return response()->json([
+            'status' => 'success',
+            'message' => $manejo,
+        ], 200);
 
-        $plantio->manejos()->attach(['plantio_id' => $data['plantio_id']], ['manejo_id' => $data['manejo_id']], ['data' => $data['data']]);
+        //$plantio->manejos->sync($request->input('manejo_id'));
+        //$plantio->attach(['plantio_id' => $data['plantio_id']], ['manejo_id' => $data['manejo_id']], ['data' => $data['data']]);
     }
 }

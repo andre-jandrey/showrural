@@ -19,4 +19,9 @@ class Plantio extends Model
     {
         return $this->belongsTo("App\Models\Endereco");
     }
+
+    public function manejos()
+    {
+        return $this->belongsToMany("App\Models\Manejo", "manejos_plantio", "manejo_id", "plantio_id");
+    }
 }
