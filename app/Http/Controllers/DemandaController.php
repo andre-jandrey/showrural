@@ -31,6 +31,7 @@ class DemandaController extends Controller
             $qtde_final = $demanda->quantidade - $vendas;
             $demanda['qtde_final'] = $qtde_final;
         }
+        //dd($demandas);
         return response()->json([
             'status' => 'success',
             'message' => $demandas,
