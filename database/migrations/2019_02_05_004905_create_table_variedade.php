@@ -28,6 +28,6 @@ class CreateTableVariedade extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_variedade');
+        Schema::dropIfExists('variedade');
     }
 }

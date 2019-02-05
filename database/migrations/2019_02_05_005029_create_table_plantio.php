@@ -43,6 +43,6 @@ class CreateTablePlantio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_plantio');
+        Schema::dropIfExists('plantio');
     }
 }

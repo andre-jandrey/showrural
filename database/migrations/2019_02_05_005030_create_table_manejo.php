@@ -27,6 +27,6 @@ class CreateTableManejo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_manejo');
+        Schema::dropIfExists('manejo');
     }
 }

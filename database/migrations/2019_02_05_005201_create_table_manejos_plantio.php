@@ -15,7 +15,7 @@ class CreateTableManejosPlantio extends Migration
     {
         Schema::create('manejos_plantio', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->date('data');
             $table->unsignedInteger('plantio_id')->nullable();
             $table
                 ->foreign('plantio_id')
