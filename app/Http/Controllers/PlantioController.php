@@ -22,6 +22,7 @@ class PlantioController extends Controller
                 'tipo' => ['required', 'integer'],
             ]); 
         }
+
         if($method == 'PUT'){
             return Validator::make($data, [
                 'variedade_id' => ['integer'],
@@ -32,6 +33,7 @@ class PlantioController extends Controller
                 'tipo' => ['integer'],
             ]); 
         }
+        
         return [];
     }
 
@@ -67,7 +69,7 @@ class PlantioController extends Controller
         if (!$endereco = Endereco::find($data['endereco_id'])) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Endereço não encontrad0',
+                'message' => 'Endereço não encontrado',
             ], 404);
         }
 
@@ -123,7 +125,7 @@ class PlantioController extends Controller
         if (!$endereco = Endereco::find($data['endereco_id'])) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Endereço não encontrad0',
+                'message' => 'Endereço não encontrado',
             ], 404);
         }
 
