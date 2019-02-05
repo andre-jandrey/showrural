@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Demanda;
 use App\Models\Variedade;
+use App\Models\Venda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
@@ -23,8 +24,13 @@ class DemandaController extends Controller
 
     public function index()
     {
-        $demandas = Demanda::all();
+        $demandas = Demanda::get();
 
+        foreach($demandas as $demanda){
+            $vendas = Venda::where('demanda_id', $demanda->id)->sum('quantidade');
+            $qtde_final = $demanda->quantidade - $vendas;
+            $demanda->attributes['qtde_final'] = $qtde_final;
+        }
         return response()->json([
             'status' => 'success',
             'message' => $demandas,

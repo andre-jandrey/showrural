@@ -22,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::apiResource('endereco', 'EnderecoController');
     Route::apiResource('plantio', 'PlantioController');
     Route::apiResource('venda', 'VendaController');
+    Route::apiResource('demanda', 'DemandaController');
 //});
