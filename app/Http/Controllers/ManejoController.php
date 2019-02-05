@@ -8,34 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ManejoController extends Controller
 {
-    protected function validator($method, array $data)
+    protected function validator(array $data)
     {
-        dd($method);
-        switch ($method()) {
-            case 'GET':
-            case 'DELETE':
-                {
-                    return [];
-                }
-            case 'POST':
-                {
-                    return Validator::make($data, [
-                        'nome' => ['required', 'string', 'max:255'],
-                    ]);
-                }
-            case 'PUT':
-            case 'PATCH':
-                {
-                    return Validator::make($data, [
-                        'nome' => ['required', 'string', 'max:255'],
-                    ]);
-                }
-            default:break;
-        }
-
-/*         return Validator::make($data, [
+        return Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
-        ]); */
+        ]); 
     }
 
     public function index()
@@ -92,10 +69,10 @@ class ManejoController extends Controller
                 'message' => 'Manejo não encontrado',
             ], 404);
         }
-dd($request);
+
         $data = $request->all();
 
-        $v = $this->validator($request->method, $data);
+        $v = $this->validator($data);
         if ($v->fails()){
             return response()->json([
                 'status' => 'error',
@@ -111,8 +88,20 @@ dd($request);
         ], 200);
     }
 
-    public function destroy(Manejo $manejo)
+    public function destroy($id)
     {
-        //
+        if (!$manejo = Manejo::find($id)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Manejo não encontrado',
+            ], 404);
+        }
+
+        $manejo->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => $manejo,
+        ], 200);
     }
 }
