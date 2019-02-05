@@ -2,82 +2,71 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Demanda;
 use App\Models\Variedade;
-use App\Models\Venda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
 
-class DemandaController extends Controller
+class VariedadeController extends Controller
 {
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'data' => ['required', 'date'],
-            'quantidade' => ['required', 'integer'],
-            'valor' => ['required'],
-            'variedade_id' => ['required'],
-            'user_id' => ['required'],
+            'nome' => ['required', 'string', 'max:255'],
         ]); 
     }
 
     public function index()
     {
-        $demandas = Demanda::get();
+        $variedades = Variedade::all();
 
-        foreach($demandas as $demanda){
-            $vendas = Venda::where('demanda_id', $demanda->id)->sum('quantidade');
-            $qtde_final = $demanda->quantidade - $vendas;
-            $demanda['qtde_final'] = $qtde_final;
-        }
         return response()->json([
             'status' => 'success',
-            'message' => $demandas,
+            'message' => $variedades,
         ], 200);  
     }
-
-    public function create()
-    {
-        $variedades = Variedade::get();
-        return view('demanda.create', compact('variedades'));
-    }
-
+/*
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['user_id'] = Auth::id();
+
         $v = $this->validator($data);
         if ($v->fails()){
-            return back()->withErrors($v->messages());
+            return response()->json([
+                'status' => 'error',
+                'message' => $v->errors(),
+            ], 404);
         }
-        
-        $demanda = Demanda::create($data);
+
+        $endereco = Endereco::create($data);
             
-        return redirect('/')->with('message', 'Demanda cadastrada com sucesso!');
+        return response()->json([
+            'status' => 'success',
+            'message' => $endereco,
+        ], 200);
     }
 
     public function show($id)
     {
-        if (!$manejo = Demanda::find($id)) {
+        if (!$endereco = Endereco::find($id)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Manejo não encontrado',
+                'message' => 'Endereco não encontrado',
             ], 404);
         }
 
         return response()->json([
             'status' => 'success',
-            'message' => $manejo,
+            'message' => $endereco,
         ], 200);  
     }
+
    
     public function update(Request $request, $id)
     {
-        if (!$manejo = Demanda::find($id)) {
+        if (!$endereco = Endereco::find($id)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Manejo não encontrado',
+                'message' => 'Endereco não encontrado',
             ], 404);
         }
 
@@ -91,28 +80,28 @@ class DemandaController extends Controller
             ], 404);
         }
 
-        $manejo->update($data);
+        $endereco->update($data);
             
         return response()->json([
             'status' => 'success',
-            'message' => $manejo,
+            'message' => $endereco,
         ], 200);
     }
 
     public function destroy($id)
     {
-        if (!$manejo = Demanda::find($id)) {
+        if (!$endereco = Endereco::find($id)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Manejo não encontrado',
+                'message' => 'Endereco não encontrado',
             ], 404);
         }
 
-        $manejo->delete();
+        $endereco->delete();
 
         return response()->json([
             'status' => 'success',
-            'message' => $manejo,
+            'message' => $endereco,
         ], 200);
-    }
+    }*/
 }

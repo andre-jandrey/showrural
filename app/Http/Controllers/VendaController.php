@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venda;
 use App\Models\Demanda; 
+use App\Models\Extrato; 
 use App\Models\Plantio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -95,7 +96,21 @@ class VendaController extends Controller
         }
 
         $venda = Venda::create($data);
-            
+
+        $total = $demanda->valor * $venda->quantidade;
+        
+       
+        $extrato = [
+            'user_id' => '1', 
+            'valor' => $total, 
+            'data' => $venda->created_at, 
+            'cooperativa_id' => $demanda->user_id, 
+            'descricao' => $demanda->variedade->nome
+        ];
+        //dd($extrato);
+
+        Extrato::create($extrato);       
+        
         return response()->json([
             'status' => 'success',
             'message' => $venda,

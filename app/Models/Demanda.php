@@ -15,6 +15,11 @@ class Demanda extends Model
         return $this->belongsTo("App\Models\User");
     }
 
+    public function variedade()
+    {
+        return $this->belongsTo("App\Models\Variedade");
+    }
+
     public function vendas()
     {
         return $this->hasMany("App\Models\Venda");
