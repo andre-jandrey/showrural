@@ -78,12 +78,12 @@ class DemandaController extends Controller
         curl_close($curl);
 
         if ($err) {
-        echo "cURL Error #:" . $err;
+        //echo "cURL Error #:" . $err;
         } else {
-        echo $response;
+        //echo $response;
         }
                   
-        //return redirect('/')->with('message', 'Demanda cadastrada com sucesso!');
+        return redirect('/')->with('message', 'Demanda cadastrada com sucesso!');
     }
 
     public function show($id)
